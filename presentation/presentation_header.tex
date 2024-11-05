@@ -1,0 +1,290 @@
+% This file contains a set of packages, commands, and styles that are commonly used in LaTeX documents for mathematics. It includes packages for formatting, fonts, colors, graphics, theorems, and more. The file also defines several commands for commonly used mathematical symbols and sets. Finally, it defines a set of theorem styles for different types of mathematical statements, such as definitions, examples, propositions, theorems, lemmas, and corollaries.
+
+% basics
+\usepackage[utf8]{inputenc} % input encoding
+\usepackage[T1]{fontenc} % font selection
+\usepackage{textcomp} % additional text symbols
+\usepackage{url} % URL formatting
+\usepackage{hyperref} % hyperlinking
+\hypersetup{
+    colorlinks,
+    linkcolor={bb_g},
+    citecolor={bb_g},
+    urlcolor={bb_g}
+}
+\usepackage{graphicx} % graphics inclusion
+\usepackage{float} % float placement
+\usepackage{booktabs} % table formatting
+\usepackage{enumitem} % list formatting
+% \usepackage{parskip} % paragraph spacing
+\usepackage{emptypage} % empty pages
+\usepackage{subcaption} % subfigure and subtable formatting
+\usepackage{multicol} % multicolumn formatting
+\usepackage[usenames,dvipsnames]{xcolor} % color definitions
+\usepackage[final]{listings} % code listing formatting
+
+% \usepackage{cmbright} % font selection
+
+\usepackage{amsmath, amsfonts, mathtools, amsthm, amssymb} % math packages
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry} % page margins
+\usepackage{titling} % title formatting
+\setlength{\droptitle}{-.5in} % title spacing
+\usepackage{mathrsfs} % math script font
+\usepackage{cancel} % cancel notation
+\usepackage{bm} % bold math symbols
+\newcommand\N{\ensuremath{\mathbb{N}}} % natural numbers
+\newcommand\R{\ensuremath{\mathbb{R}}} % real numbers
+\newcommand\Z{\ensuremath{\mathbb{Z}}} % integers
+\renewcommand\O{\ensuremath{\emptyset}} % empty set
+\newcommand\Q{\ensuremath{\mathbb{Q}}} % rational numbers
+\newcommand\C{\ensuremath{\mathbb{C}}} % complex numbers
+\newcommand\F{\ensuremath{\mathbb{F}}} % finite field
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\DeclareMathOperator{\sgn}{sgn}
+\usepackage{systeme}
+\let\svlim\lim\def\lim{\svlim\limits}
+\let\implies\Rightarrow
+\let\impliedby\Leftarrow
+\let\iff\Leftrightarrow
+\let\epsilon\varepsilon
+\usepackage{stmaryrd} % for \lightning
+\newcommand\contra{\scalebox{1.1}{$\lightning$}}
+% \let\phi\varphi
+
+
+% correct
+\definecolor{correct}{HTML}{009900}
+\newcommand\correct[2]{\ensuremath{\:}{\color{red}{#1}}\ensuremath{\to }{\color{correct}{#2}}\ensuremath{\:}}
+\newcommand\green[1]{{\color{correct}{#1}}}
+
+
+% Nord colors
+\definecolor{d_0}{HTML}{2E3440}
+\definecolor{d_1}{HTML}{3B4252}
+\definecolor{d_2}{HTML}{434C5E}
+\definecolor{d_3}{HTML}{4C566A}
+
+\definecolor{w_0}{HTML}{D8DEE9}
+\definecolor{w_1}{HTML}{E5E9F0}
+\definecolor{w_2}{HTML}{ECEFF4}
+
+\definecolor{b_ggg}{HTML}{8FBCBB}
+\definecolor{b_gg}{HTML}{88C0D0}
+\definecolor{b_g}{HTML}{81A1C1}
+\definecolor{bb_g}{HTML}{5E81AC}
+
+\definecolor{a_red}{HTML}{BF616A}
+\definecolor{a_orange}{HTML}{D08770}
+\definecolor{a_yellow}{HTML}{EBCB8B}
+\definecolor{a_green}{HTML}{A3BE8C}
+\definecolor{a_purple}{HTML}{B48EAD}
+
+
+% Font
+% \renewcommand{\familydefault}{\sfdefault}
+
+
+% horizontal rule
+\newcommand\hr{
+    \noindent\rule[0.5ex]{\linewidth}{0.5pt}
+}
+
+
+% hide parts
+\newcommand\hide[1]{}
+
+
+% si unitx
+\usepackage{siunitx}
+\sisetup{locale = FR}
+% \renewcommand\vec[1]{\mathbf{#1}}
+\newcommand\mat[1]{\mathbf{#1}}
+
+
+% tikz
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usetikzlibrary{intersections, angles, quotes, calc, positioning}
+\usetikzlibrary{arrows.meta}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.13}
+
+
+\tikzset{
+    force/.style={thick, {Circle[length=2pt]}-stealth, shorten <=-1pt}
+}
+
+
+% theorems
+\makeatother
+\usepackage{thmtools}
+\usepackage[framemethod=TikZ]{mdframed}
+\mdfsetup{skipabove=1em,skipbelow=0em}
+
+
+\theoremstyle{definition}
+
+\newcommand{\declaretheoremstylebox}[2]{
+    \declaretheoremstyle[
+        headfont=\bfseries\sffamily\color{#1}, bodyfont=\normalfont,
+        mdframed={
+            linewidth=2pt,
+            rightline=false, topline=false, bottomline=false,
+            linecolor=#1, backgroundcolor=#1!5
+        }
+    ]{thm#2box}    
+}
+
+\newcommand{\declaretheoremstyleline}[2]{
+    \declaretheoremstyle[
+        headfont=\bfseries\sffamily\color{#1}, bodyfont=\normalfont,
+        mdframed={
+            linewidth=2pt,
+            rightline=false, topline=false, bottomline=false,
+            linecolor=#1
+        }
+    ]{thm#2line}    
+}
+
+\declaretheoremstylebox{b_ggg}{green}
+\declaretheoremstylebox{b_g}{blue}
+\declaretheoremstylebox{a_red}{red}
+\declaretheoremstylebox{a_orange}{orange}
+\declaretheoremstylebox{a_yellow!60!a_orange}{yellow}
+
+\declaretheoremstyleline{bb_g}{blue}
+\declaretheoremstyleline{b_gg}{green}
+
+\declaretheoremstyle[
+    headfont=\bfseries\sffamily\color{a_red}, bodyfont=\normalfont,
+    numbered=no,
+    mdframed={
+        linewidth=2pt,
+        rightline=false, topline=false, bottomline=false,
+        linecolor=a_red, backgroundcolor=a_red!1,
+    },
+    qed=\qedsymbol
+]{thmproofbox}
+
+\declaretheoremstyle[
+    headfont=\bfseries\sffamily\color{b_g}, bodyfont=\normalfont,
+    numbered=no,
+    mdframed={
+        linewidth=2pt,
+        rightline=false, topline=false, bottomline=false,
+        linecolor=b_g, backgroundcolor=b_g!1,
+    },
+]{thmexplanationbox}
+
+% \declaretheoremstyle[headfont=\bfseries\sffamily, bodyfont=\normalfont, mdframed={ nobreak } ]{thmgreenbox}
+% \declaretheoremstyle[headfont=\bfseries\sffamily, bodyfont=\normalfont, mdframed={ nobreak } ]{thmredbox}
+% \declaretheoremstyle[headfont=\bfseries\sffamily, bodyfont=\normalfont]{thmbluebox}
+% \declaretheoremstyle[headfont=\bfseries\sffamily, bodyfont=\normalfont]{thmblueline}
+% \declaretheoremstyle[headfont=\bfseries\sffamily, bodyfont=\normalfont, numbered=no, mdframed={ rightline=false, topline=false, bottomline=false, }, qed=\qedsymbol ]{thmproofbox}
+% \declaretheoremstyle[headfont=\bfseries\sffamily, bodyfont=\normalfont, numbered=no, mdframed={ nobreak, rightline=false, topline=false, bottomline=false } ]{thmexplanationbox}
+
+\declaretheorem[style=thmgreenbox, name=Definition]{definition}
+\declaretheorem[style=thmbluebox, numbered=no, name=Example]{example}
+\declaretheorem[style=thmorangebox, name=Proposition]{proposition}
+\declaretheorem[style=thmredbox, name=Theorem]{theorem}
+\declaretheorem[style=thmyellowbox, name=Lemma]{lemma}
+\declaretheorem[style=thmredbox, numbered=no, name=Corollary]{corollary}
+
+\declaretheorem[style=thmproofbox, name=Proof]{replacementproof}
+\renewenvironment{proof}[1][\proofname]{\vspace{-10pt}\begin{replacementproof}}{\end{replacementproof}}
+
+\declaretheorem[style=thmexplanationbox, name=Proof]{tmpexplanation}
+\newenvironment{explanation}[1][]{\vspace{-10pt}\begin{tmpexplanation}}{\end{tmpexplanation}}
+
+\declaretheorem[style=thmgreenline, numbered=no, name=Remark]{remark}
+\declaretheorem[style=thmblueline, numbered=no, name=Note]{note}
+
+\newtheorem*{uovt}{UOVT}
+\newtheorem*{notation}{Notation}
+\newtheorem*{previouslyseen}{As previously seen}
+\newtheorem*{problem}{Problem}
+\newtheorem*{observe}{Observe}
+\newtheorem*{property}{Property}
+\newtheorem*{intuition}{Intuition}
+
+
+\usepackage{etoolbox}
+\AtEndEnvironment{vb}{\null\hfill$\diamond$}%
+\AtEndEnvironment{intermezzo}{\null\hfill$\diamond$}%
+% \AtEndEnvironment{opmerking}{\null\hfill$\diamond$}%
+
+% http://tex.stackexchange.com/questions/22119/how-can-i-change-the-spacing-before-theorems-with-amsthm
+\makeatletter
+% \def\thm@space@setup{%
+%   \thm@preskip=\parskip \thm@postskip=0pt
+% }
+
+
+\newcommand{\exercise}[1]{%
+    \def\@exercise{#1}%
+    \subsection*{Exercise #1}
+}
+
+\newcommand{\subexercise}[1]{%
+    \subsubsection*{Exercise \@exercise.#1}
+}
+
+
+\usepackage{xifthen}
+
+% Notes
+\usepackage{marginnote}
+\let\marginpar\marginnote
+
+\def\testdateparts#1{\dateparts#1\relax}
+\def\dateparts#1 #2 #3 #4 #5\relax{
+    \marginpar{\small\textsf{\mbox{#1 #2 #3 #5}}}
+}
+
+\def\@lecture{}%
+\newcommand{\lecture}[3]{
+	\ifthenelse{\isempty{#3}}{%
+		\def\@lecture{Lecture #1}%
+	}{%
+		\def\@lecture{Lecture #1: #3}%
+	}%
+	\section*{\@lecture}
+	\marginpar{\small\textsf{\mbox{#2}}}
+}
+
+
+% \renewcommand\date[1]{\marginpar{#1}}
+
+
+% fancy headers
+\usepackage{fancyhdr} % package for customizing headers and footers
+\pagestyle{fancy} % set the page style to use the fancyhdr package
+
+% LE: left even
+% RO: right odd
+% CE, CO: center even, center odd
+\fancyhead[LE, RO]{George C.} % set the left even and right odd headers to "George C."
+\fancyhead[RO, LE]{\@lecture} % set the right odd and left even headers to the value of the \@lecture command
+\fancyhead[RE, LO]{} % clear the right even and left odd headers
+\fancyfoot[RO, LE]{\thepage} % set the right odd and left even footers to the page number
+\fancyfoot[RE, LO]{} % clear the right even and left odd footers
+\fancyfoot[C]{\leftmark} % set the center footer to the current section name
+
+\makeatother % end the use of the \@ symbol
+
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+    \def\svgwidth{\columnwidth}
+    \import{./figures/}{#1.pdf_tex}
+}
+
+% %http://tex.stackexchange.com/questions/76273/multiple-pdfs-with-page-group-included-in-a-single-page-warning
+\pdfsuppresswarningpagegroup=1
+
+\setcounter{section}{-1}
