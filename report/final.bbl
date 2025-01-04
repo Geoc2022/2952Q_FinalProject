@@ -1,0 +1,27 @@
+\begin{thebibliography}{1}\itemsep=-1pt
+
+\bibitem{acharya2022robustestimationrandomgraphs}
+J.~Acharya, A.~Jain, G.~Kamath, A.~T. Suresh, and H.~Zhang.
+\newblock Robust estimation for random graphs, 2022.
+
+\bibitem{Albert_2002}
+R.~Albert and A.-L. Barabási.
+\newblock Statistical mechanics of complex networks.
+\newblock {\em Reviews of Modern Physics}, 74(1):47–97, Jan. 2002.
+
+\bibitem{Erds2022}
+P.~Erdős and A.~Rényi.
+\newblock On random graphs. i.
+\newblock {\em Publicationes Mathematicae Debrecen}, 6(3–4):290–297, July 2022.
+
+\bibitem{Gilbert1959}
+E.~N. Gilbert.
+\newblock Random graphs.
+\newblock {\em The Annals of Mathematical Statistics}, 30(4):1141–1144, Dec. 1959.
+
+\bibitem{Newman2001}
+M.~E.~J. Newman, S.~H. Strogatz, and D.~J. Watts.
+\newblock Random graphs with arbitrary degree distributions and their applications.
+\newblock {\em Physical Review E}, 64(2), July 2001.
+
+\end{thebibliography}
