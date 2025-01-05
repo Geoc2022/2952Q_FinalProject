@@ -1,4 +1,4 @@
-# 2952Q_FinalProject
+# 2952Q_FinalProject : Robust Estimation for the Erdős-Rényi Model
 
 This repository contains the code and resources for the final project of the class [CSCI2952Q: Robust Algorithms in Machine Learning](https://cs.brown.edu/people/ycheng79/csci2952qf24.html). The project focuses on the robust estimation of the edge probability \(p\) in the Erdős-Rényi random graph model under adversarial perturbation of vertices.
 
