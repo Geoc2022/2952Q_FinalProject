@@ -20,6 +20,6 @@ We define a new class of adversarial models, the \((q, \epsilon)\)-adversarial m
 - `presentation/`: Contains the presentation slides for the project.
 
 ## [Paper](report/final.pdf)
-## [Presentation](presentation/presentation.pdf)
+## [Presentation](presentation/CSCI2952Q_Presentation.pdf)
 
 
